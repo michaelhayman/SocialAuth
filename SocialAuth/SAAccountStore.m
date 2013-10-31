@@ -118,7 +118,7 @@
 			if (granted) {
 				processAccounts();
 			} else if (error.code == ACErrorAccountNotFound) {
-				requestAccountCreation();
+				block(NO, nil, error);
 			} else {
 				block(NO, nil, error);
 			}
